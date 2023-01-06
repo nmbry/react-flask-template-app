@@ -7,7 +7,7 @@ RUN apt-get update
 WORKDIR /usr/src
 
 # ディレクトリとファイルをコピーする
-COPY ./apps /usr/src/apps
+COPY apis /usr/src/apps
 COPY ./requirements.txt /usr/src/requirements.txt
 
 # pipのバージョンを更新する
@@ -20,7 +20,7 @@ RUN pip install -r requirements.txt
 RUN echo "building..."
 
 # 必要な環境変数を設定する
-ENV FLASK_APP "apps.run:create_app('release')"
+ENV FLASK_APP "apis.run:create_app('prod')"
 ENV FLASK_DEBUG "false"
 
 # 特定のネットワーク・ポートをコンテナが実行時にlistenする

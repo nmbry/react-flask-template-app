@@ -14,7 +14,7 @@
  $ cd react-flask-template-app/backend
  
  $ flask run
-    * Serving Flask app 'apps.run:create_app('local')'
+    * Serving Flask app 'apis.run:create_app('local')'
     * Debug mode: on
    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
     * Running on http://127.0.0.1:5000
@@ -29,7 +29,7 @@
 Pytestは起動方法が複数あるが、以下はフォルダをまとめて実行するやり方。
 
 ```sh
- $ cd react-flask-template-app/backend/apps/tests
+ $ cd react-flask-template-app/backend/apis/tests
  
  $ pytest .
 ```
