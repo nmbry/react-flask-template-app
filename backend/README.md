@@ -1,6 +1,6 @@
 ## 準備
 
-```
+```sh
  $ cd react-flask-template-app/backend
  
  $ pip install -r requirements.txt
