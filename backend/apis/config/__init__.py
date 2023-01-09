@@ -4,11 +4,11 @@ from apis.config.testing import TestingConfig
 
 config = {
     # 開発用
-    'development': DevelopmentConfig,
+    'development': DevelopmentConfig(),
 
     # 本番用
-    'production': ProductionConfig,
+    'production': ProductionConfig(),
 
     # テスト用
-    'testing': TestingConfig,
+    'testing': TestingConfig(),
 }

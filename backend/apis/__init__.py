@@ -1,8 +1,14 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+# DBの初期化
+db = SQLAlchemy()
+
+
 def create_app(config_key):
     # ##############################################################
     # Flask App
     # ##############################################################
-    from flask import Flask
     app = Flask(
         __name__,
         # 静的ファイルの置き場所を指定する
@@ -19,11 +25,8 @@ def create_app(config_key):
     # ##############################################################
     # データベース
     # ##############################################################
-    from flask_sqlalchemy import SQLAlchemy
-    db = SQLAlchemy()
-
     # DBを連携する
-    # db.init_app(app)
+    db.init_app(app)
 
     # ##############################################################
     # ログ

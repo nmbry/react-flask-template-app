@@ -3,11 +3,43 @@ version: "3"
 services:
   api:
     container_name: api
+    depends_on:
+      - db
     build: ./backend
     command: [ "flask", "run", "-h", "0.0.0.0" ]
     restart: always
     ports:
       - 8080:5000
+    networks:
+      - main-net
     environment:
-      - FLASK_APP=app.py
+      - FLASK_APP=apis.app
       - FLASK_CONFIG_MODE=development
+      - DB_HOST=db # !!!注意!!! コンテナ名
+      - DB_PORT=5432
+      - DB_NAME=postgres
+      - DB_USER=admin
+      - DB_PASS=admin0
+
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    networks:
+      - main-net
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin0
+
+volumes:
+  # 開発環境ではボリュームマウント（Docker Engin管理）とする
+  pgdata:
+
+
+networks:
+  main-net:
