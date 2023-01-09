@@ -9,6 +9,5 @@ services:
     ports:
       - 8080:5000
     environment:
-      - FLASK_APP=app.py
-      - FLASK_ENV=production
-      - FLASK_DEBUG=false
+      - FLASK_APP=apis.app
+      - FLASK_CONFIG_MODE=production

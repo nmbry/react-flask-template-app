@@ -14,6 +14,6 @@ def index():
     """ サンプルJSONを返却する。 """
     sample_response = sample_model.get_sample_data()
 
-    logger.info('アクセスがきました。')
+    logger.info('アクセスがきました！')
 
     return make_response(jsonify(sample_response), 200)

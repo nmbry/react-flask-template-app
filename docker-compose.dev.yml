@@ -10,5 +10,4 @@ services:
       - 8080:5000
     environment:
       - FLASK_APP=app.py
-      - FLASK_ENV=development
-      - FLASK_DEBUG=true
+      - FLASK_CONFIG_MODE=development
