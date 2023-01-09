@@ -4,11 +4,12 @@ FROM python:3.10
 RUN apt-get update
 
 # コンテナ上のワーキングディレクトリを指定する
-WORKDIR /usr/src
+WORKDIR /usr/src/backend
 
 # ディレクトリとファイルをコピーする
-COPY apis /usr/src/apps
-COPY ./requirements.txt /usr/src/requirements.txt
+COPY ./apis ./apis
+COPY ./run.py ./run.py
+COPY ./requirements.txt ./requirements.txt
 
 # pipのバージョンを更新する
 RUN pip install --upgrade pip
@@ -20,7 +21,8 @@ RUN pip install -r requirements.txt
 RUN echo "building..."
 
 # 必要な環境変数を設定する
-ENV FLASK_APP "apis.run:create_app('prod')"
+ENV FLASK_APP "run.py"
+ENV FLASK_ENV "development"
 ENV FLASK_DEBUG "false"
 
 # 特定のネットワーク・ポートをコンテナが実行時にlistenする

@@ -12,8 +12,8 @@ logger = logging.getLogger(__name__)
 @api.route('/', methods=['GET'])
 def index():
     """ サンプルJSONを返却する。 """
-    sample_dict = sample_model.get_sample_data()
+    sample_response = sample_model.get_sample_data()
 
     logger.info('アクセスがきました。')
 
-    return make_response(jsonify(sample_dict), 200)
+    return make_response(jsonify(sample_response), 200)
