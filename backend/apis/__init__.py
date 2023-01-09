@@ -34,7 +34,7 @@ def create_app(config_key):
     import logging
     logging.basicConfig(
         level=config[config_key].LOG_LEVEL,
-        format='%(asctime)s:%(levelname)s %(filename)s - %(message)s',
+        format='[%(asctime)s] [%(levelname)s] [%(filename)s] %(message)s',
     )
 
     # ##################################################
