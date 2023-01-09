@@ -42,4 +42,5 @@ logging.basicConfig(
 # ##################################################
 # ルーティング
 # ##################################################
-app.register_blueprint(apis.handlers.sample_handler.api, url_prefix='/api/v1/sample')
+api_v1 = '/api/v1'
+app.register_blueprint(apis.handlers.sample_handler.api, url_prefix=f"{api_v1}/sample")

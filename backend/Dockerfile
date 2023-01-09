@@ -1,15 +1,15 @@
 FROM python:3.10
 
-# apt-getのバージョンを更新する
-RUN apt-get update
-
 # コンテナ上のワーキングディレクトリを指定する
 WORKDIR /usr/src/backend
 
 # ディレクトリとファイルをコピーする
 COPY ./apis ./apis
-COPY ./run.py ./run.py
+COPY app.py ./app.py
 COPY ./requirements.txt ./requirements.txt
+
+# apt-getのバージョンを更新する
+RUN apt-get update
 
 # pipのバージョンを更新する
 RUN pip install --upgrade pip
@@ -21,7 +21,7 @@ RUN pip install -r requirements.txt
 RUN echo "building..."
 
 # 必要な環境変数を設定する
-ENV FLASK_APP "run.py"
+ENV FLASK_APP "app.py"
 ENV FLASK_ENV "development"
 ENV FLASK_DEBUG "false"
 

@@ -1,6 +1,6 @@
 import pytest
 
-from run import create_app
+from app import create_app
 
 
 def setup():
