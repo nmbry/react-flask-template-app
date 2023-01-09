@@ -13,7 +13,7 @@ services:
     networks:
       - main-net
     environment:
-      - FLASK_APP=apis.app
+      - FLASK_APP=apis.run
       - FLASK_CONFIG_MODE=development
       - DB_HOST=db # !!!注意!!! コンテナ名
       - DB_PORT=5432

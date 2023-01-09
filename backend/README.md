@@ -10,11 +10,13 @@
 
 ### Flask起動
 
+`http://127.0.0.1:8080/api/v1/sample/`
+
 ```sh
  $ cd react-flask-template-app/backend
  
  $ flask run
-    * Serving Flask app 'apis.run:create_app('local')'
+    * Serving Flask app 'apis.run'
     * Debug mode: on
    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
     * Running on http://127.0.0.1:5000
