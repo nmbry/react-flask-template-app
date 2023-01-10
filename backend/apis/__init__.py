@@ -42,7 +42,7 @@ def create_app(config_key):
     # ##################################################
     api_v1 = '/api/v1'
 
-    import apis.handlers.sample_handler
-    app.register_blueprint(apis.handlers.sample_handler.api, url_prefix=f"{api_v1}/sample")
+    from apis.handlers.sample_handler import api as sample_api
+    app.register_blueprint(sample_api, url_prefix=f"{api_v1}/sample")
 
     return app
