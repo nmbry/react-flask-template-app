@@ -1,4 +1,3 @@
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 # DBの初期化
@@ -9,6 +8,7 @@ def create_app(config_key):
     # ##############################################################
     # Flask App
     # ##############################################################
+    from flask import Flask
     app = Flask(
         __name__,
         # 静的ファイルの置き場所を指定する
