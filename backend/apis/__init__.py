@@ -25,7 +25,6 @@ def create_app(config_key):
     # ########################################################################
     #  データベース
     # ########################################################################
-    # DBを連携する
     db.init_app(app)
 
     # ########################################################################
@@ -44,5 +43,10 @@ def create_app(config_key):
 
     from apis.handlers.sample_handler import api as sample_api
     app.register_blueprint(sample_api, url_prefix=f"{api_v1}/sample")
+
+    # ########################################################################
+    #  エラー処理
+    # ########################################################################
+    # 詳しくは[こちら](https://msiz07-flask-docs-ja.readthedocs.io/ja/latest/errorhandling.html)
 
     return app
